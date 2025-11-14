@@ -32,7 +32,7 @@
   --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', 'Monaco', monospace;
   
   --container-max-width: 1200px;
-  --sidebar-width: 280px;
+  --sidebar-width: 240px;
   --header-height: 70px;
 }
 
@@ -616,7 +616,8 @@ body {
 .content-area {
   flex: 1;
   margin-left: var(--sidebar-width);
-  padding: 30px;
+  padding: 30px 40px;
+  max-width: none;
 }
 
 /* ===== 面包屑导航 ===== */
@@ -649,7 +650,8 @@ body {
 
 /* ===== 文章内容 ===== */
 .article-content {
-  max-width: 800px;
+  max-width: 1000px;
+  width: 100%;
 }
 
 .article-header {

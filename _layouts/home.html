@@ -47,11 +47,13 @@ layout: default
   </section>
 
   <!-- 主要内容 -->
+  {% if content and content != '' and content contains '<' %}
   <section class="main-section">
     <div class="container">
       {{ content }}
     </div>
   </section>
+  {% endif %}
 
   <!-- 特色功能 -->
   <section class="features-section">
