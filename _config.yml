@@ -1,8 +1,13 @@
 # 基本配置
 title: 游戏测试开发完全指南
-description: Python游戏测试自动化 + C#游戏开发完整学习路径
+description: Python游戏测试自动化 + C#游戏开发完整学习路径 - 从入门到精通的完整教程
 url: https://Elysees.github.io/game-testing-guide
 baseurl: /game-testing-guide
+
+# SEO优化
+author: Elysees
+lang: zh-CN
+timezone: Asia/Shanghai
 
 # 主题设置
 theme: jekyll-theme-cayman
@@ -13,57 +18,88 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-feed
+  - jekyll-github-metadata
+  - jekyll-optional-front-matter
+  - jekyll-readme-index
+  - jekyll-titles-from-headings
+  - jekyll-relative-links
 
 kramdown:
   input: GFM
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     css_class: 'highlight'
+    default_lang: python
     span:
       line_numbers: false
     block:
       line_numbers: true
+      start_line: 1
 
-# 集合配置（使用文件夹结构）
-collections:
-  python_guide:
-    output: true
-    permalink: /python/:name/
-  csharp_guide:
-    output: true
-    permalink: /csharp/:name/
+# 性能优化
+sass:
+  style: compressed
+  
+# 分页配置
+paginate: 10
+paginate_path: "/page:num/"
 
-# 默认配置
+# 默认配置（优化版）
 defaults:
-  # 所有 Markdown 文件使用默认布局
   - scope:
       path: ""
       type: "pages"
     values:
       layout: "default"
-  
-  # Python 指南的默认设置
+      
   - scope:
       path: "python"
     values:
-      layout: "default"
-      category: python
-  
-  # C# 指南的默认设置
+      layout: "guide"
+      category: "python"
+      section: "Python游戏测试自动化"
+      
   - scope:
       path: "csharp"
     values:
-      layout: "default"
-      category: csharp
+      layout: "guide"
+      category: "csharp"
+      section: "C#游戏开发指南"
 
-# 排除文件和文件夹
+# 排除文件优化
 exclude:
-  - .gitignore
-  - .git
-  - node_modules
-  - vendor
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
   - Gemfile
   - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - CHANGELOG
+  - Capfile
+  - Gruntfile.js
+  - Rakefile
+  - README
+  - config.codekit
+  - package.json
+  - gulpfile.js
+  - LICENSE
+  - log
+  - node_modules
+  - package.json
+  - Rakefile
+  - tmp
+  - /docs
+  - /test
 
 # 包含隐藏文件
 include:
@@ -73,10 +109,26 @@ include:
 keep_files:
   - .git
 
-# 其他配置
+# GitHub Pages 特定配置
+github: [metadata]
 show_downloads: false
+
+# 网站信息
 github:
   owner_name: Elysees
   owner_url: https://github.com/Elysees
   repository: game-testing-guide
   repository_url: https://github.com/Elysees/game-testing-guide
+
+# 搜索配置
+search: true
+search_full_content: true
+
+# 导航配置
+navigation:
+  - title: "首页"
+    url: "/"
+  - title: "Python指南"
+    url: "/python/"
+  - title: "C#指南"
+    url: "/csharp/"

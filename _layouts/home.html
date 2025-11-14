@@ -1,0 +1,165 @@
+---
+layout: default
+---
+
+<div class="home-layout">
+  <!-- 英雄区域 -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <i class="fas fa-gamepad"></i>
+        {{ site.title }}
+      </h1>
+      <p class="hero-description">{{ site.description }}</p>
+      
+      <!-- 统计数据 -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">95,000+</div>
+          <div class="stat-label">总字数</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">170+</div>
+          <div class="stat-label">代码示例</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">6</div>
+          <div class="stat-label">实战项目</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">80+</div>
+          <div class="stat-label">面试题</div>
+        </div>
+      </div>
+      
+      <!-- CTA按钮 -->
+      <div class="cta-buttons">
+        <a href="{{ '/python/' | relative_url }}" class="cta-btn primary">
+          <i class="fab fa-python"></i>
+          开始Python学习
+        </a>
+        <a href="{{ '/csharp/' | relative_url }}" class="cta-btn secondary">
+          <i class="fas fa-code"></i>
+          开始C#学习
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 主要内容 -->
+  <section class="main-section">
+    <div class="container">
+      {{ content }}
+    </div>
+  </section>
+
+  <!-- 特色功能 -->
+  <section class="features-section">
+    <div class="container">
+      <h2 class="section-title">为什么选择我们的指南？</h2>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <h3>快速上手</h3>
+          <p>从基础到高级，循序渐进的学习路径，让你快速掌握核心技能。</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3>实战导向</h3>
+          <p>170+个真实代码示例，6个完整项目，学以致用。</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>面试准备</h3>
+          <p>80+道高频面试题，帮你轻松通过技术面试。</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3>全平台支持</h3>
+          <p>Web游戏、移动游戏测试，Unity游戏开发全覆盖。</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>进度跟踪</h3>
+          <p>智能学习进度跟踪，让你清楚掌握学习状态。</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-heart"></i>
+          </div>
+          <h3>完全免费</h3>
+          <p>所有内容完全免费，持续更新，助力你的职业发展。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 学习路径 -->
+  <section class="learning-paths">
+    <div class="container">
+      <h2 class="section-title">选择你的学习路径</h2>
+      
+      <div class="paths-grid">
+        <div class="path-card python-path">
+          <div class="path-header">
+            <i class="fab fa-python"></i>
+            <h3>Python游戏测试自动化</h3>
+          </div>
+          <div class="path-content">
+            <ul class="path-features">
+              <li><i class="fas fa-check"></i> Pytest测试框架</li>
+              <li><i class="fas fa-check"></i> Selenium Web自动化</li>
+              <li><i class="fas fa-check"></i> Appium移动测试</li>
+              <li><i class="fas fa-check"></i> 性能测试与数据分析</li>
+              <li><i class="fas fa-check"></i> 3个完整实战项目</li>
+            </ul>
+            <div class="path-stats">
+              <span>10个章节</span>
+              <span>50,000+字</span>
+              <span>80+代码示例</span>
+            </div>
+            <a href="{{ '/python/' | relative_url }}" class="path-btn">开始学习</a>
+          </div>
+        </div>
+        
+        <div class="path-card csharp-path">
+          <div class="path-header">
+            <i class="fas fa-code"></i>
+            <h3>C#游戏开发完全指南</h3>
+          </div>
+          <div class="path-content">
+            <ul class="path-features">
+              <li><i class="fas fa-check"></i> C#语言基础到高级</li>
+              <li><i class="fas fa-check"></i> Unity游戏开发</li>
+              <li><i class="fas fa-check"></i> 面向对象编程</li>
+              <li><i class="fas fa-check"></i> 游戏架构设计</li>
+              <li><i class="fas fa-check"></i> 3个完整游戏项目</li>
+            </ul>
+            <div class="path-stats">
+              <span>12个章节</span>
+              <span>45,000+字</span>
+              <span>90+代码示例</span>
+            </div>
+            <a href="{{ '/csharp/' | relative_url }}" class="path-btn">开始学习</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

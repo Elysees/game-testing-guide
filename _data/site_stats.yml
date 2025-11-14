@@ -1,0 +1,113 @@
+# 网站统计数据
+overall:
+  total_words: 95000
+  total_code_examples: 170
+  total_projects: 6
+  total_interview_questions: 80
+  total_chapters: 22
+  
+python_guide:
+  chapters: 10
+  words: 50000
+  code_examples: 80
+  projects: 3
+  interview_questions: 40
+  common_issues: 100
+  
+csharp_guide:
+  chapters: 12
+  words: 45000
+  code_examples: 90
+  projects: 3
+  interview_questions: 40
+  common_issues: 100
+
+# 技术栈统计
+tech_stack:
+  python:
+    - name: "Pytest"
+      category: "测试框架"
+      description: "Python测试框架"
+      
+    - name: "Selenium"
+      category: "Web自动化"
+      description: "Web应用自动化测试"
+      
+    - name: "Appium"
+      category: "移动测试"
+      description: "移动应用自动化测试"
+      
+    - name: "Locust"
+      category: "性能测试"
+      description: "性能和负载测试工具"
+      
+    - name: "Pandas"
+      category: "数据分析"
+      description: "数据处理和分析"
+      
+    - name: "Matplotlib"
+      category: "数据可视化"
+      description: "数据可视化库"
+      
+  csharp:
+    - name: "C#"
+      category: "编程语言"
+      description: "现代面向对象编程语言"
+      
+    - name: "Unity"
+      category: "游戏引擎"
+      description: "跨平台游戏开发引擎"
+      
+    - name: "Visual Studio"
+      category: "开发环境"
+      description: "集成开发环境"
+      
+    - name: "LINQ"
+      category: "查询语言"
+      description: "语言集成查询"
+
+# 难度级别定义
+difficulty_levels:
+  easy:
+    name: "入门"
+    color: "#28a745"
+    icon: "fas fa-star"
+    description: "适合初学者，基础概念和简单操作"
+    
+  medium:
+    name: "中级"
+    color: "#ffc107"
+    icon: "fas fa-star-half-alt"
+    description: "需要一定基础，涉及复杂概念和实践"
+    
+  hard:
+    name: "高级"
+    color: "#dc3545"
+    icon: "fas fa-star"
+    description: "需要扎实基础，涉及高级概念和复杂实现"
+
+# 学习时间估算
+time_estimates:
+  reading_speed: 200  # 每分钟阅读字数
+  coding_practice_ratio: 2  # 编程练习时间倍数
+  project_time_hours: 8  # 每个项目平均小时数
+
+# 更新历史
+updates:
+  - date: "2024-01-15"
+    version: "1.0.0"
+    description: "初始版本发布"
+    changes:
+      - "完成Python指南10个章节"
+      - "完成C#指南12个章节"
+      - "添加6个实战项目"
+      - "整理80+面试题"
+      
+  - date: "2024-02-01"
+    version: "1.1.0"
+    description: "功能增强版本"
+    changes:
+      - "优化网站UI和用户体验"
+      - "添加搜索功能"
+      - "添加学习进度跟踪"
+      - "优化移动端适配"

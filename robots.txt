@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# 网站地图
+Sitemap: https://Elysees.github.io/game-testing-guide/sitemap.xml
+
+# 禁止爬取的目录
+Disallow: /assets/js/
+Disallow: /_site/
+Disallow: /.git/
+Disallow: /.github/
+
+# 允许爬取主要内容
+Allow: /python/
+Allow: /csharp/
+Allow: /assets/css/
+Allow: /assets/images/

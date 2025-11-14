@@ -1,0 +1,242 @@
+# 主导航配置
+main:
+  - title: "首页"
+    url: "/"
+    icon: "fas fa-home"
+    
+  - title: "Python指南"
+    url: "/python/"
+    icon: "fab fa-python"
+    description: "Python游戏测试自动化完整教程"
+    
+  - title: "C#指南"
+    url: "/csharp/"
+    icon: "fas fa-code"
+    description: "C#游戏开发完全指南"
+
+# Python章节导航
+python_chapters:
+  - id: "00-index"
+    title: "课程目录和导航"
+    url: "/python/00-index"
+    description: "Python游戏测试自动化指南总览"
+    difficulty: "easy"
+    duration: "10分钟"
+    tags: ["导航", "概述"]
+    
+  - id: "01-basics"
+    title: "基础知识和环境配置"
+    url: "/python/01-basics"
+    description: "Python基础、环境配置、核心测试库介绍"
+    difficulty: "easy"
+    duration: "1-2天"
+    tags: ["基础", "环境配置", "Python"]
+    
+  - id: "02-pytest-framework"
+    title: "Pytest框架详解"
+    url: "/python/02-pytest-framework"
+    description: "Pytest核心概念、Fixtures、参数化测试"
+    difficulty: "medium"
+    duration: "3-5天"
+    tags: ["pytest", "测试框架", "单元测试"]
+    
+  - id: "03-selenium-automation"
+    title: "Selenium Web自动化"
+    url: "/python/03-selenium-automation"
+    description: "WebDriver、元素定位、Page Object模式"
+    difficulty: "medium"
+    duration: "5-7天"
+    tags: ["selenium", "web自动化", "UI测试"]
+    
+  - id: "04-appium-mobile"
+    title: "Appium移动测试"
+    url: "/python/04-appium-mobile"
+    description: "移动端自动化、手势操作、多设备测试"
+    difficulty: "hard"
+    duration: "7-10天"
+    tags: ["appium", "移动测试", "Android", "iOS"]
+    
+  - id: "05-performance-testing"
+    title: "性能测试"
+    url: "/python/05-performance-testing"
+    description: "Locust压力测试、性能监控、瓶颈分析"
+    difficulty: "medium"
+    duration: "5-7天"
+    tags: ["性能测试", "locust", "压力测试"]
+    
+  - id: "06-data-analysis"
+    title: "数据分析和报告"
+    url: "/python/06-data-analysis"
+    description: "Pandas数据处理、Matplotlib可视化"
+    difficulty: "medium"
+    duration: "4-6天"
+    tags: ["数据分析", "pandas", "matplotlib"]
+    
+  - id: "07-real-projects"
+    title: "完整实战项目"
+    url: "/python/07-real-projects"
+    description: "3个完整的游戏测试项目实战"
+    difficulty: "hard"
+    duration: "10-15天"
+    tags: ["实战项目", "框架设计", "最佳实践"]
+    
+  - id: "08-best-practices"
+    title: "最佳实践和框架设计"
+    url: "/python/08-best-practices"
+    description: "测试框架设计、代码组织、CI/CD集成"
+    difficulty: "medium"
+    duration: "3-5天"
+    tags: ["最佳实践", "框架设计", "CI/CD"]
+    
+  - id: "09-common-pitfalls"
+    title: "常见坑和解决方案"
+    url: "/python/09-common-pitfalls"
+    description: "30+常见问题详解和解决方案"
+    difficulty: "medium"
+    duration: "2-3天"
+    tags: ["问题解决", "调试", "经验分享"]
+    
+  - id: "10-interview-questions"
+    title: "面试题精讲"
+    url: "/python/10-interview-questions"
+    description: "40+道高频面试题详解"
+    difficulty: "medium"
+    duration: "3-5天"
+    tags: ["面试", "算法", "系统设计"]
+
+# C#章节导航
+csharp_chapters:
+  - id: "00-index"
+    title: "课程目录和导航"
+    url: "/csharp/00-index"
+    description: "C#游戏开发完全指南总览"
+    difficulty: "easy"
+    duration: "10分钟"
+    tags: ["导航", "概述"]
+    
+  - id: "01-quick-start"
+    title: "C/C++开发者快速入门"
+    url: "/csharp/01-quick-start"
+    description: "基于C/C++经验的C#快速上手"
+    difficulty: "easy"
+    duration: "1天"
+    tags: ["快速入门", "C++对比", "环境配置"]
+    
+  - id: "02-basics"
+    title: "基础语法详解"
+    url: "/csharp/02-basics"
+    description: "数据类型、控制流、方法定义"
+    difficulty: "easy"
+    duration: "2-3天"
+    tags: ["基础语法", "数据类型", "控制流"]
+    
+  - id: "03-oop"
+    title: "面向对象编程"
+    url: "/csharp/03-oop"
+    description: "类、继承、多态、接口详解"
+    difficulty: "medium"
+    duration: "2-3天"
+    tags: ["面向对象", "继承", "多态", "接口"]
+    
+  - id: "04-linq"
+    title: "LINQ和集合框架"
+    url: "/csharp/04-linq"
+    description: "LINQ查询、集合操作、Lambda表达式"
+    difficulty: "medium"
+    duration: "2-3天"
+    tags: ["LINQ", "集合", "Lambda"]
+    
+  - id: "05-advanced"
+    title: "高级特性"
+    url: "/csharp/05-advanced"
+    description: "委托、事件、异步编程、泛型"
+    difficulty: "hard"
+    duration: "2-3天"
+    tags: ["委托", "事件", "异步", "泛型"]
+    
+  - id: "06-unity-basics"
+    title: "Unity基础"
+    url: "/csharp/06-unity-basics"
+    description: "Unity编辑器、MonoBehaviour、组件系统"
+    difficulty: "medium"
+    duration: "3-4天"
+    tags: ["Unity", "MonoBehaviour", "组件"]
+    
+  - id: "07-game-development"
+    title: "游戏开发实战"
+    url: "/csharp/07-game-development"
+    description: "完整游戏系统设计和实现"
+    difficulty: "hard"
+    duration: "4-5天"
+    tags: ["游戏开发", "系统设计", "实战"]
+    
+  - id: "09-best-practices"
+    title: "最佳实践和性能优化"
+    url: "/csharp/09-best-practices"
+    description: "代码规范、设计模式、性能优化"
+    difficulty: "medium"
+    duration: "2-3天"
+    tags: ["最佳实践", "性能优化", "设计模式"]
+    
+  - id: "10-common-pitfalls"
+    title: "常见坑和解决方案"
+    url: "/csharp/10-common-pitfalls"
+    description: "30+常见问题和解决方案"
+    difficulty: "medium"
+    duration: "2-3天"
+    tags: ["问题解决", "调试", "内存管理"]
+    
+  - id: "11-interview-questions"
+    title: "面试题精讲"
+    url: "/csharp/11-interview-questions"
+    description: "40+道C#和Unity面试题"
+    difficulty: "medium"
+    duration: "1-2天"
+    tags: ["面试", "C#", "Unity"]
+    
+  - id: "12-resources"
+    title: "学习资源和扩展阅读"
+    url: "/csharp/12-resources"
+    description: "官方文档、学习资源、社区推荐"
+    difficulty: "easy"
+    duration: "随时查阅"
+    tags: ["资源", "文档", "社区"]
+
+# 学习路径配置
+learning_paths:
+  python:
+    - name: "快速入门路径"
+      description: "适合有Python基础的开发者"
+      duration: "约9天"
+      chapters: ["01-basics", "02-pytest-framework", "03-selenium-automation", "07-real-projects"]
+      
+    - name: "移动端专精路径"
+      description: "专注手游测试的开发者"
+      duration: "约16天"
+      chapters: ["01-basics", "02-pytest-framework", "04-appium-mobile", "07-real-projects"]
+      
+    - name: "全栈测试工程师路径"
+      description: "完整的测试开发学习路径"
+      duration: "约45-60天"
+      chapters: ["01-basics", "02-pytest-framework", "03-selenium-automation", "04-appium-mobile", "05-performance-testing", "06-data-analysis", "07-real-projects", "08-best-practices", "09-common-pitfalls", "10-interview-questions"]
+      
+    - name: "性能测试专精路径"
+      description: "专注性能测试的开发者"
+      duration: "约17天"
+      chapters: ["01-basics", "02-pytest-framework", "05-performance-testing", "06-data-analysis", "07-real-projects"]
+      
+  csharp:
+    - name: "快速入门路径"
+      description: "有C/C++基础的开发者"
+      duration: "约1周"
+      chapters: ["01-quick-start", "02-basics", "03-oop", "06-unity-basics", "07-game-development", "11-interview-questions"]
+      
+    - name: "系统学习路径"
+      description: "完整的C#游戏开发学习路径"
+      duration: "约3-4周"
+      chapters: ["01-quick-start", "02-basics", "03-oop", "04-linq", "05-advanced", "06-unity-basics", "07-game-development", "09-best-practices", "10-common-pitfalls", "11-interview-questions", "12-resources"]
+      
+    - name: "Unity专项路径"
+      description: "专注Unity游戏开发"
+      duration: "约2-3周"
+      chapters: ["01-quick-start", "02-basics", "03-oop", "06-unity-basics", "07-game-development", "09-best-practices", "11-interview-questions"]

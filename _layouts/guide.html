@@ -1,0 +1,146 @@
+---
+layout: default
+---
+
+<div class="guide-layout">
+  <!-- 侧边栏导航 -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h3>
+        <i class="fas fa-book"></i>
+        {{ page.section | default: "学习指南" }}
+      </h3>
+      <button class="sidebar-toggle" id="sidebarToggle">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
+    <div class="sidebar-content">
+      {% if page.category == 'python' %}
+        {% include python-nav.html %}
+      {% elsif page.category == 'csharp' %}
+        {% include csharp-nav.html %}
+      {% endif %}
+      
+      <!-- 学习进度 -->
+      <div class="progress-section">
+        <h4><i class="fas fa-chart-line"></i> 学习进度</h4>
+        <div class="progress-stats">
+          <div class="stat-item">
+            <span class="stat-number" id="completedChapters">0</span>
+            <span class="stat-label">已完成</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" id="totalChapters">0</span>
+            <span class="stat-label">总章节</span>
+          </div>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- 主要内容区域 -->
+  <div class="content-area">
+    <!-- 面包屑导航 -->
+    <nav class="breadcrumb">
+      <a href="{{ '/' | relative_url }}">首页</a>
+      <span class="separator">/</span>
+      <a href="{{ '/' | append: page.category | append: '/' | relative_url }}">
+        {{ page.section }}
+      </a>
+      {% if page.title %}
+        <span class="separator">/</span>
+        <span class="current">{{ page.title }}</span>
+      {% endif %}
+    </nav>
+
+    <!-- 文章内容 -->
+    <article class="article-content">
+      {% if page.title %}
+        <header class="article-header">
+          <h1>{{ page.title }}</h1>
+          {% if page.description %}
+            <p class="article-description">{{ page.description }}</p>
+          {% endif %}
+          
+          <!-- 文章元信息 -->
+          <div class="article-meta">
+            {% if page.difficulty %}
+              <span class="difficulty difficulty-{{ page.difficulty }}">
+                <i class="fas fa-star"></i>
+                难度: {{ page.difficulty }}
+              </span>
+            {% endif %}
+            
+            {% if page.duration %}
+              <span class="duration">
+                <i class="fas fa-clock"></i>
+                预计时间: {{ page.duration }}
+              </span>
+            {% endif %}
+            
+            {% if page.tags %}
+              <div class="tags">
+                {% for tag in page.tags %}
+                  <span class="tag">{{ tag }}</span>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        </header>
+      {% endif %}
+
+      <!-- 目录 -->
+      {% if page.show_toc != false %}
+        <div class="table-of-contents" id="toc">
+          <h3><i class="fas fa-list"></i> 目录</h3>
+          <div class="toc-content" id="tocContent">
+            <!-- 由JavaScript动态生成 -->
+          </div>
+        </div>
+      {% endif %}
+
+      <!-- 正文内容 -->
+      <div class="content-body">
+        {{ content }}
+      </div>
+
+      <!-- 章节导航 -->
+      <nav class="chapter-nav">
+        {% if page.prev_chapter %}
+          <a href="{{ page.prev_chapter.url | relative_url }}" class="nav-prev">
+            <i class="fas fa-chevron-left"></i>
+            <span>
+              <small>上一章</small>
+              <strong>{{ page.prev_chapter.title }}</strong>
+            </span>
+          </a>
+        {% endif %}
+        
+        {% if page.next_chapter %}
+          <a href="{{ page.next_chapter.url | relative_url }}" class="nav-next">
+            <span>
+              <small>下一章</small>
+              <strong>{{ page.next_chapter.title }}</strong>
+            </span>
+            <i class="fas fa-chevron-right"></i>
+          </a>
+        {% endif %}
+      </nav>
+
+      <!-- 完成标记 -->
+      <div class="chapter-completion">
+        <button class="complete-btn" id="completeBtn" data-chapter="{{ page.url }}">
+          <i class="fas fa-check"></i>
+          标记为已完成
+        </button>
+      </div>
+    </article>
+  </div>
+</div>
+
+<!-- 移动端侧边栏遮罩 -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'zh-CN' }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  {% seo %}
+  
+  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <!-- 进度条 -->
+  <div class="progress-indicator" id="progressBar"></div>
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="{{ '/' | relative_url }}">
+          <i class="fas fa-gamepad"></i>
+          {{ site.title }}
+        </a>
+      </div>
+      
+      <div class="nav-toggle" id="navToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      
+      <div class="nav-menu" id="navMenu">
+        {% for item in site.navigation %}
+          <a href="{{ item.url | relative_url }}" class="nav-link">{{ item.title }}</a>
+        {% endfor %}
+        
+        <div class="search-container">
+          <input type="text" id="searchInput" placeholder="搜索内容..." class="search-input">
+          <i class="fas fa-search search-icon"></i>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 主要内容 -->
+  <main class="main-content">
+    {{ content }}
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>{{ site.title }}</h3>
+          <p>{{ site.description }}</p>
+        </div>
+        
+        <div class="footer-section">
+          <h3>快速链接</h3>
+          <ul>
+            <li><a href="{{ '/python/' | relative_url }}">Python指南</a></li>
+            <li><a href="{{ '/csharp/' | relative_url }}">C#指南</a></li>
+            <li><a href="{{ site.github.repository_url }}">GitHub仓库</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>联系方式</h3>
+          <p>
+            <a href="{{ site.github.owner_url }}" target="_blank">
+              <i class="fab fa-github"></i> {{ site.github.owner_name }}
+            </a>
+          </p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; {{ 'now' | date: "%Y" }} {{ site.github.owner_name }}. 保留所有权利。</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/search.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/progress.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/copy-code.js' | relative_url }}"></script>
+</body>
+</html>
