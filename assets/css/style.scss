@@ -635,6 +635,8 @@ body {
   margin-left: var(--sidebar-width);
   padding: 30px 40px;
   max-width: none;
+  min-width: 0;
+  width: calc(100% - var(--sidebar-width));
 }
 
 /* ===== 面包屑导航 ===== */
@@ -643,10 +645,16 @@ body {
   align-items: center;
   gap: 10px;
   margin-bottom: 30px;
+  padding: 15px 0;
   font-size: 0.9rem;
   color: var(--text-muted);
   width: 100%;
   max-width: none;
+  flex-wrap: wrap;
+  background: var(--bg-secondary);
+  border-radius: var(--border-radius);
+  padding: 15px 20px;
+  border: 1px solid var(--border-color);
 }
 
 .breadcrumb a {
@@ -1429,6 +1437,117 @@ body {
   .nav-next {
     max-width: none;
   }
+  
+  .content-area {
+    width: 100%;
+  }
+  
+  .article-content {
+    max-width: 100%;
+  }
+  
+  .breadcrumb {
+    padding: 10px 15px;
+    margin-bottom: 20px;
+  }
+  
+  .table-of-contents {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-description {
+    font-size: 1.1rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat-card {
+    padding: 20px 15px;
+  }
+  
+  .content-area {
+    padding: 15px;
+  }
+  
+  .breadcrumb {
+    font-size: 0.8rem;
+    padding: 8px 12px;
+  }
+  
+  .article-header h1 {
+    font-size: 2rem;
+  }
+  
+  .content-body h1 {
+    font-size: 1.8rem;
+  }
+  
+  .content-body h2 {
+    font-size: 1.5rem;
+  }
+  
+  .content-body h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/* ===== 布局修复 ===== */
+.guide-layout {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.main-content {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* 修复面包屑导航在小屏幕上的显示 */
+@media (max-width: 768px) {
+  .breadcrumb {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .breadcrumb .separator {
+    display: none;
+  }
+  
+  .breadcrumb .separator:first-of-type {
+    display: inline;
+  }
+}
+
+/* 确保内容区域不会超出视口 */
+.content-area,
+.article-content,
+.content-body {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* 修复代码块在小屏幕上的显示 */
+@media (max-width: 768px) {
+  .content-body pre {
+    margin: 16px -20px;
+    border-radius: 0;
+  }
+  
+  .content-body pre code {
+    padding: 40px 20px 20px;
+    font-size: 0.85rem;
+  }
+}
   
   .article-header h1 {
     font-size: 2rem;
