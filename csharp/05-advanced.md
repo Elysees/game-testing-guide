@@ -1041,7 +1041,7 @@ public class GameAsyncOperations
         await Task.Delay(500);
         
         // 模拟成功响应
-        return $"{{\\"Id\\":\\"{endpoint.Split('/').Last()}\\",\\"Name\\":\\"TestPlayer\\",\\"Level\\":15,\\"Score\\":2500}}";
+{% raw %}        return $"{{\"Id\":\"{endpoint.Split('/').Last()}\",\"Name\":\"TestPlayer\",\"Level\":15,\"Score\":2500}}";{% endraw %}
     }
     
     // 异步保存游戏
