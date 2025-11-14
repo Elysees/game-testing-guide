@@ -4,6 +4,9 @@ description: Python游戏测试自动化 + C#游戏开发完整学习路径 - �
 url: https://Elysees.github.io/game-testing-guide
 baseurl: /game-testing-guide
 
+# GitHub 仓库配置（修复构建错误）
+repository: Elysees/game-testing-guide
+
 # SEO优化
 author: Elysees
 lang: zh-CN
@@ -117,8 +120,6 @@ show_downloads: false
 github:
   owner_name: Elysees
   owner_url: https://github.com/Elysees
-  repository: game-testing-guide
-  repository_url: https://github.com/Elysees/game-testing-guide
 
 # 搜索配置
 search: true
