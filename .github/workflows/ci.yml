@@ -29,8 +29,7 @@ jobs:
           --check-html \
           --allow-hash-href \
           --file-ignore "/assets/" \
-          --empty-alt-ignore \
-          --missing-alt-ignore
+          --alt-ignore "/.*/"
           
   lighthouse:
     runs-on: ubuntu-latest

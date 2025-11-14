@@ -31,7 +31,7 @@
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', 'Monaco', monospace;
   
-  --container-max-width: 1200px;
+  --container-max-width: none;
   --sidebar-width: 280px;
   --header-height: 70px;
 }
@@ -161,9 +161,14 @@ body {
 }
 
 /* ===== 主要内容区域 ===== */
+/* ===== 主要内容区域 ===== */
 .main-content {
-  margin-top: var(--header-height);
-  min-height: calc(100vh - var(--header-height));
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: none;
 }
 
 /* ===== 首页布局 ===== */
@@ -186,13 +191,18 @@ body {
 .hero-title {
   font-size: 3.5rem;
   margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+  color: #ffffff;
+  font-weight: 700;
 }
 
 .hero-description {
   font-size: 1.3rem;
   margin-bottom: 40px;
-  opacity: 0.9;
+  color: #ffffff;
+  opacity: 0.95;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+  font-weight: 400;
 }
 
 .stats-grid {
@@ -206,17 +216,20 @@ body {
 }
 
 .stat-card {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.25);
   padding: 30px 20px;
   border-radius: 15px;
   backdrop-filter: blur(10px);
   text-align: center;
   transition: var(--transition);
+  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
 }
 
 .stat-card:hover {
   transform: translateY(-5px);
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.35);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.15);
 }
 
 .stat-number {
@@ -224,11 +237,15 @@ body {
   font-weight: bold;
   display: block;
   margin-bottom: 10px;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .stat-label {
   font-size: 1rem;
-  opacity: 0.8;
+  color: #ffffff;
+  opacity: 0.95;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
 .cta-buttons {
@@ -839,20 +856,18 @@ body {
   font-style: italic;
 }
 
-/* ===== 现代化代码块样式 ===== */
+/* ===== 现代化代码块样式 - GitHub Dark 主题 ===== */
 .content-body pre {
   position: relative;
-  background: linear-gradient(135deg, #1e1e2e 0%, #2a2a3e 100%);
-  border: 1px solid #3c3c54;
-  border-radius: 12px;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 8px;
   overflow: hidden;
   margin: 24px 0;
   font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', var(--font-mono);
   font-size: 0.9rem;
   line-height: 1.6;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 
-              0 2px 8px rgba(0, 0, 0, 0.2),
-              inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 24px rgba(1, 4, 9, 0.15);
 }
 
 .content-body pre::before {
@@ -862,24 +877,33 @@ body {
   left: 0;
   right: 0;
   height: 40px;
-  background: linear-gradient(90deg, #ff5f56 0%, #ffbd2e 33%, #27ca3f 66%, #007aff 100%);
-  background-size: 100% 3px;
-  background-repeat: no-repeat;
-  background-position: 0 0;
+  background: #161b22;
+  border-bottom: 1px solid #30363d;
+}
+
+.content-body pre::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ff5f56;
+  box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #27ca3f;
 }
 
 .content-body pre code {
   display: block;
   padding: 50px 24px 24px;
-  color: #f8f8f2;
+  color: #c9d1d9;
   background: transparent;
   font-family: inherit;
   font-size: 0.95rem;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.7;
   overflow-x: auto;
   white-space: pre;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .content-body code {
@@ -901,18 +925,17 @@ body {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-/* 语法高亮 - VS Code Dark+ 主题风格 - 增强对比度版本 */
+/* 语法高亮 - GitHub Dark 主题 */
 .content-body pre .token.comment,
 .content-body pre .token.prolog,
 .content-body pre .token.doctype,
 .content-body pre .token.cdata {
-  color: #7cb668;
+  color: #8b949e;
   font-style: italic;
-  opacity: 0.9;
 }
 
 .content-body pre .token.punctuation {
-  color: #f0f0f0;
+  color: #c9d1d9;
 }
 
 .content-body pre .token.property,
@@ -922,7 +945,7 @@ body {
 .content-body pre .token.constant,
 .content-body pre .token.symbol,
 .content-body pre .token.deleted {
-  color: #c8e6c9;
+  color: #79c0ff;
 }
 
 .content-body pre .token.selector,
@@ -931,32 +954,32 @@ body {
 .content-body pre .token.char,
 .content-body pre .token.builtin,
 .content-body pre .token.inserted {
-  color: #f2a65a;
+  color: #a5d6ff;
 }
 
 .content-body pre .token.operator,
 .content-body pre .token.entity,
 .content-body pre .token.url,
 .content-body pre .token.variable {
-  color: #f0f0f0;
+  color: #ff7b72;
 }
 
 .content-body pre .token.atrule,
 .content-body pre .token.attr-value,
 .content-body pre .token.function,
 .content-body pre .token.class-name {
-  color: #f4f4aa;
+  color: #d2a8ff;
   font-weight: 600;
 }
 
 .content-body pre .token.keyword {
-  color: #6db3f2;
+  color: #ff7b72;
   font-weight: 600;
 }
 
 .content-body pre .token.regex,
 .content-body pre .token.important {
-  color: #ff7b7b;
+  color: #ffa657;
 }
 
 .content-body pre .token.important,
@@ -974,23 +997,23 @@ body {
 
 /* Python 特定语法高亮 */
 .content-body pre .token.decorator {
-  color: #5dd4bd;
+  color: #ffa657;
   font-weight: 600;
 }
 
 .content-body pre .token.builtin-name {
-  color: #5dd4bd;
+  color: #79c0ff;
   font-weight: 600;
 }
 
 /* C# 特定语法高亮 */
 .content-body pre .token.namespace {
-  color: #5dd4bd;
+  color: #7ee787;
   font-weight: 600;
 }
 
 .content-body pre .token.generic {
-  color: #5dd4bd;
+  color: #79c0ff;
   font-weight: 600;
 }
 
