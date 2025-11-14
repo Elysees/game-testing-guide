@@ -1,10 +1,18 @@
+# 基本配置
 title: 游戏测试开发完全指南
 description: Python游戏测试自动化 + C#游戏开发完整学习路径
+url: https://Elysees.github.io/game-testing-guide
+baseurl: /game-testing-guide
+
+# 主题设置
 theme: jekyll-theme-cayman
+
+# Markdown 处理
 markdown: kramdown
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-feed
 
 kramdown:
   input: GFM
@@ -16,22 +24,53 @@ kramdown:
     block:
       line_numbers: true
 
+# 集合配置（使用文件夹结构）
 collections:
-  python:
+  python_guide:
     output: true
-    permalink: /python/:name
-  csharp:
+    permalink: /python/:name/
+  csharp_guide:
     output: true
-    permalink: /csharp/:name
+    permalink: /csharp/:name/
 
+# 默认配置
 defaults:
+  # Python 指南的默认设置
   - scope:
-      path: ""
-      type: "python"
+      path: "python-testing-guide"
     values:
-      layout: default
+      layout: page
+      category: python
+  
+  # C# 指南的默认设置
   - scope:
-      path: ""
-      type: "csharp"
+      path: "csharp-learning-guide"
     values:
-      layout: default
+      layout: page
+      category: csharp
+
+# 排除文件和文件夹
+exclude:
+  - .gitignore
+  - .git
+  - README.md
+  - node_modules
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+
+# 包含隐藏文件
+include:
+  - .htaccess
+
+# 输出配置
+keep_files:
+  - .git
+
+# 其他配置
+show_downloads: false
+github:
+  owner_name: Elysees
+  owner_url: https://github.com/Elysees
+  repository: game-testing-guide
+  repository_url: https://github.com/Elysees/game-testing-guide
