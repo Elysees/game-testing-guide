@@ -1,22 +1,10 @@
 source "https://rubygems.org"
 
-# Jekyll版本
-gem "jekyll", "~> 4.3.0"
-
-# GitHub Pages兼容
+# GitHub Pages gem包含了Jekyll和所有兼容的插件
 gem "github-pages", group: :jekyll_plugins
 
-# Jekyll插件
-group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.12"
-  gem "jekyll-sitemap"
-  gem "jekyll-seo-tag"
-  gem "jekyll-github-metadata"
-  gem "jekyll-optional-front-matter"
-  gem "jekyll-readme-index"
-  gem "jekyll-titles-from-headings"
-  gem "jekyll-relative-links"
-end
+# 注意：不要单独指定jekyll版本，github-pages会自动包含兼容版本
+# 注意：不要单独添加插件，github-pages已包含所有支持的插件
 
 # Windows和JRuby不包含zoneinfo文件，需要tzinfo-data gem
 platforms :mingw, :x64_mingw, :mswin, :jruby do
