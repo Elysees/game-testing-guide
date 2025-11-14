@@ -1,0 +1,37 @@
+title: 游戏测试开发完全指南
+description: Python游戏测试自动化 + C#游戏开发完整学习路径
+theme: jekyll-theme-cayman
+markdown: kramdown
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+
+collections:
+  python:
+    output: true
+    permalink: /python/:name
+  csharp:
+    output: true
+    permalink: /csharp/:name
+
+defaults:
+  - scope:
+      path: ""
+      type: "python"
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: "csharp"
+    values:
+      layout: default

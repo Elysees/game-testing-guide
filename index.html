@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游戏测试开发完全指南</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            text-align: center;
+            min-width: 180px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: block;
+            color: #fff;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+
+        .content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 20px 0;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .section h3 {
+            color: #764ba2;
+            font-size: 1.5rem;
+            margin: 25px 0 15px 0;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 30px;
+            border-radius: 15px;
+            color: white;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .link-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #667eea;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .link-card:hover {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .link-card h4 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .link-card a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .link-card a:hover {
+            text-decoration: underline;
+        }
+
+        .cta {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: white;
+            margin-top: 40px;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .stats {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-gamepad"></i> 游戏测试开发完全指南</h1>
+            <p>Python 游戏测试自动化 + C# 游戏开发完全指南 - 从入门到精通</p>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">95,000+</span>
+                    <span class="stat-label">总字数</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">170+</span>
+                    <span class="stat-label">代码示例</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">6</span>
+                    <span class="stat-number">实战项目</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">80+</span>
+                    <span class="stat-label">面试题</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2><i class="fas fa-star"></i> 项目概述</h2>
+                <p>本项目是一个全面的游戏测试开发学习指南，包含两个主要部分：</p>
+                
+                <div class="features">
+                    <div class="feature-card">
+                        <i class="fas fa-python"></i>
+                        <h4>Python 游戏测试自动化</h4>
+                        <p>10个章节 • 50,000+字 • 80+代码示例 • 3个实战项目</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-code"></i>
+                        <h4>C# 游戏开发</h4>
+                        <p>12个章节 • 45,000+字 • 90+代码示例 • 3个完整游戏项目</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><i class="fas fa-graduation-cap"></i> 学习路径</h2>
+                
+                <h3>Python 部分</h3>
+                <div class="links">
+                    <div class="link-card">
+                        <h4>基础知识</h4>
+                        <a href="python/00-index.md">课程目录</a><br>
+                        <a href="python/01-basics.md">基础知识和环境配置</a>
+                    </div>
+                    <div class="link-card">
+                        <h4>测试框架</h4>
+                        <a href="python/02-pytest-framework.md">Pytest框架详解</a>
+                    </div>
+                    <div class="link-card">
+                        <h4>自动化测试</h4>
+                        <a href="python/03-selenium-automation.md">Selenium Web自动化</a><br>
+                        <a href="python/04-appium-mobile.md">Appium移动测试</a>
+                    </div>
+                </div>
+
+                <h3>C# 部分</h3>
+                <div class="links">
+                    <div class="link-card">
+                        <h4>语言基础</h4>
+                        <a href="csharp/00-index.md">课程目录</a><br>
+                        <a href="csharp/01-quick-start.md">C/C++开发者快速入门</a><br>
+                        <a href="csharp/02-basics.md">基础语法</a><br>
+                        <a href="csharp/03-oop.md">面向对象编程</a>
+                    </div>
+                    <div class="link-card">
+                        <h4>Unity 开发</h4>
+                        <a href="csharp/06-unity-basics.md">Unity基础</a><br>
+                        <a href="csharp/07-game-development.md">游戏开发实战</a><br>
+                        <a href="csharp/08-real-projects.md">完整游戏项目</a>
+                    </div>
+                    <div class="link-card">
+                        <h4>高级主题</h4>
+                        <a href="csharp/09-best-practices.md">最佳实践</a><br>
+                        <a href="csharp/10-common-pitfalls.md">常见坑</a><br>
+                        <a href="csharp/11-interview-questions.md">面试题</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><i class="fas fa-lightbulb"></i> 项目特色</h2>
+                <ul style="margin-left: 20px; margin-top: 15px;">
+                    <li style="margin: 10px 0; font-size: 1.1rem;"><i class="fas fa-check-circle" style="color: #28a745;"></i> <strong>实战导向</strong> - 6个完整项目实战经验</li>
+                    <li style="margin: 10px 0; font-size: 1.1rem;"><i class="fas fa-check-circle" style="color: #28a745;"></i> <strong>技术全面</strong> - 涵盖测试自动化到游戏开发全流程</li>
+                    <li style="margin: 10px 0; font-size: 1.1rem;"><i class="fas fa-check-circle" style="color: #28a745;"></i> <strong>最佳实践</strong> - 企业级代码组织和架构设计</li>
+                    <li style="margin: 10px 0; font-size: 1.1rem;"><i class="fas fa-check-circle" style="color: #28a745;"></i> <strong>面试准备</strong> - 80+高频面试题精讲</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2><i class="fas fa-cogs"></i> 技术栈</h2>
+                <div class="features">
+                    <div class="feature-card">
+                        <i class="fas fa-python"></i>
+                        <h4>Python 技术栈</h4>
+                        <p>Pytest • Selenium • Appium • Pandas • Matplotlib • Locust</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-csharp"></i>
+                        <h4>C# 技术栈</h4>
+                        <p>C# 9.0+ • Unity 2021.3+ • ECS • 组件模式 • 观察者模式</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta">
+            <a href="README.md" class="cta-button">
+                <i class="fas fa-book"></i> 开始学习之旅
+            </a>
+        </div>
+
+        <div class="footer">
+            <p>🎮 游戏测试开发完全指南 | 由 <a href="https://github.com/Elysees" target="_blank">Elysees</a> 创建</p>
+            <p>📖 在线阅读: <a href="https://Elysees.github.io/game-testing-guide" target="_blank">https://Elysees.github.io/game-testing-guide</a></p>
+            <p>📁 GitHub 仓库: <a href="https://github.com/Elysees/game-testing-guide" target="_blank">https://github.com/Elysees/game-testing-guide</a></p>
+        </div>
+    </div>
+</body>
+</html>
