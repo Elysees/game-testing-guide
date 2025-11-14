@@ -216,20 +216,20 @@ body {
 }
 
 .stat-card {
-  background: rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.9);
   padding: 30px 20px;
   border-radius: 15px;
   backdrop-filter: blur(10px);
   text-align: center;
   transition: var(--transition);
-  border: 1px solid rgba(255,255,255,0.3);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255,255,255,0.95);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
 }
 
 .stat-card:hover {
   transform: translateY(-5px);
-  background: rgba(255,255,255,0.35);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25);
 }
 
 .stat-number {
@@ -237,15 +237,15 @@ body {
   font-weight: bold;
   display: block;
   margin-bottom: 10px;
-  color: #ffffff;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  color: var(--primary-color);
+  text-shadow: none;
 }
 
 .stat-label {
   font-size: 1rem;
-  color: #ffffff;
-  opacity: 0.95;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  color: var(--text-secondary);
+  opacity: 1;
+  text-shadow: none;
 }
 
 .cta-buttons {
