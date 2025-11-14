@@ -28,8 +28,8 @@
   --box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   --transition: all 0.3s ease;
   
-  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  --font-mono: 'Consolas', 'Monaco', 'Courier New', monospace;
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', 'Monaco', monospace;
   
   --container-max-width: 1200px;
   --sidebar-width: 280px;
@@ -831,52 +831,289 @@ body {
   font-style: italic;
 }
 
-/* ===== 代码块样式 ===== */
+/* ===== 现代化代码块样式 ===== */
 .content-body pre {
   position: relative;
-  background: #2d3748;
-  color: #e2e8f0;
-  padding: 20px;
-  border-radius: var(--border-radius);
-  overflow-x: auto;
-  margin: 20px 0;
-  font-family: var(--font-mono);
+  background: linear-gradient(135deg, #1e1e2e 0%, #2a2a3e 100%);
+  border: 1px solid #3c3c54;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 24px 0;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', var(--font-mono);
   font-size: 0.9rem;
-  line-height: 1.5;
+  line-height: 1.6;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 
+              0 2px 8px rgba(0, 0, 0, 0.2),
+              inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.content-body pre::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(90deg, #ff5f56 0%, #ffbd2e 33%, #27ca3f 66%, #007aff 100%);
+  background-size: 100% 3px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.content-body pre code {
+  display: block;
+  padding: 50px 24px 24px;
+  color: #cdd6f4;
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  overflow-x: auto;
+  white-space: pre;
 }
 
 .content-body code {
-  font-family: var(--font-mono);
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', var(--font-mono);
   font-size: 0.9em;
+  font-weight: 500;
 }
 
 .content-body p code,
-.content-body li code {
-  background: var(--bg-secondary);
-  color: var(--danger-color);
-  padding: 2px 6px;
-  border-radius: 4px;
+.content-body li code,
+.content-body td code {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  color: #e74c3c;
+  padding: 3px 8px;
+  border-radius: 6px;
   font-size: 0.85em;
+  font-weight: 600;
+  border: 1px solid #dee2e6;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
+/* 语法高亮 - VS Code Dark+ 主题风格 */
+.content-body pre .token.comment,
+.content-body pre .token.prolog,
+.content-body pre .token.doctype,
+.content-body pre .token.cdata {
+  color: #6a9955;
+  font-style: italic;
+}
+
+.content-body pre .token.punctuation {
+  color: #d4d4d4;
+}
+
+.content-body pre .token.property,
+.content-body pre .token.tag,
+.content-body pre .token.boolean,
+.content-body pre .token.number,
+.content-body pre .token.constant,
+.content-body pre .token.symbol,
+.content-body pre .token.deleted {
+  color: #b5cea8;
+}
+
+.content-body pre .token.selector,
+.content-body pre .token.attr-name,
+.content-body pre .token.string,
+.content-body pre .token.char,
+.content-body pre .token.builtin,
+.content-body pre .token.inserted {
+  color: #ce9178;
+}
+
+.content-body pre .token.operator,
+.content-body pre .token.entity,
+.content-body pre .token.url,
+.content-body pre .token.variable {
+  color: #d4d4d4;
+}
+
+.content-body pre .token.atrule,
+.content-body pre .token.attr-value,
+.content-body pre .token.function,
+.content-body pre .token.class-name {
+  color: #dcdcaa;
+}
+
+.content-body pre .token.keyword {
+  color: #569cd6;
+  font-weight: 600;
+}
+
+.content-body pre .token.regex,
+.content-body pre .token.important {
+  color: #d16969;
+}
+
+.content-body pre .token.important,
+.content-body pre .token.bold {
+  font-weight: bold;
+}
+
+.content-body pre .token.italic {
+  font-style: italic;
+}
+
+.content-body pre .token.entity {
+  cursor: help;
+}
+
+/* Python 特定语法高亮 */
+.content-body pre .token.decorator {
+  color: #4ec9b0;
+}
+
+.content-body pre .token.builtin-name {
+  color: #4ec9b0;
+}
+
+/* C# 特定语法高亮 */
+.content-body pre .token.namespace {
+  color: #4ec9b0;
+}
+
+.content-body pre .token.generic {
+  color: #4ec9b0;
+}
+
+/* 行号样式 */
+.content-body pre.line-numbers {
+  padding-left: 0;
+}
+
+.content-body pre.line-numbers code {
+  padding-left: 60px;
+}
+
+.content-body pre.line-numbers .line-numbers-rows {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 50px;
+  background: rgba(0, 0, 0, 0.2);
+  border-right: 1px solid #3c3c54;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: #6c7086;
+  text-align: right;
+  padding: 0 8px;
+  user-select: none;
+}
+
+.content-body pre.line-numbers .line-numbers-rows > span {
+  display: block;
+  counter-increment: linenumber;
+}
+
+.content-body pre.line-numbers .line-numbers-rows > span:before {
+  content: counter(linenumber);
+}
+
+/* 复制按钮现代化样式 */
 .copy-code-btn {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  background: var(--primary-color);
-  color: var(--text-light);
-  border: none;
-  padding: 6px 12px;
-  border-radius: 4px;
+  top: 8px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #cdd6f4;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 12px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 0.8rem;
-  transition: var(--transition);
-  opacity: 0.8;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  opacity: 0;
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.content-body pre:hover .copy-code-btn {
+  opacity: 1;
 }
 
 .copy-code-btn:hover {
-  opacity: 1;
-  background: var(--secondary-color);
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.copy-code-btn:active {
+  transform: translateY(0);
+}
+
+.copy-code-btn.copied {
+  background: rgba(39, 202, 63, 0.2);
+  border-color: rgba(39, 202, 63, 0.4);
+  color: #27ca3f;
+}
+
+/* 代码块语言标签 */
+.content-body pre[class*="language-"]::after {
+  content: attr(data-language);
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  background: rgba(0, 0, 0, 0.3);
+  color: #cdd6f4;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.8;
+}
+
+/* 特殊代码块类型 */
+.content-body pre.language-python::after {
+  content: "Python";
+  background: linear-gradient(135deg, #3776ab 0%, #ffd43b 100%);
+  color: white;
+}
+
+.content-body pre.language-csharp::after,
+.content-body pre.language-cs::after {
+  content: "C#";
+  background: linear-gradient(135deg, #239120 0%, #68217a 100%);
+  color: white;
+}
+
+.content-body pre.language-javascript::after,
+.content-body pre.language-js::after {
+  content: "JavaScript";
+  background: linear-gradient(135deg, #f7df1e 0%, #f0db4f 100%);
+  color: #323330;
+}
+
+.content-body pre.language-html::after {
+  content: "HTML";
+  background: linear-gradient(135deg, #e34c26 0%, #f06529 100%);
+  color: white;
+}
+
+.content-body pre.language-css::after {
+  content: "CSS";
+  background: linear-gradient(135deg, #1572b6 0%, #33a9dc 100%);
+  color: white;
+}
+
+.content-body pre.language-json::after {
+  content: "JSON";
+  background: linear-gradient(135deg, #000000 0%, #434343 100%);
+  color: white;
+}
+
+.content-body pre.language-bash::after,
+.content-body pre.language-shell::after {
+  content: "Shell";
+  background: linear-gradient(135deg, #4eaa25 0%, #89e051 100%);
+  color: white;
 }
 
 /* ===== 表格样式 ===== */

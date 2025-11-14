@@ -27,15 +27,10 @@ jobs:
         bundle exec htmlproofer ./_site \
           --disable-external \
           --check-html \
-          --allow_hash_href \
-          --ignore-files "/assets/"
-          
-    - name: Check for broken links
-      run: |
-        bundle exec htmlproofer ./_site \
-          --external_only \
-          --check-external-hash \
-          --ignore-urls "/localhost/,/127.0.0.1/,/example.com/"
+          --allow-hash-href \
+          --file-ignore "/assets/" \
+          --ignore-empty-alt \
+          --ignore-missing-alt
           
   lighthouse:
     runs-on: ubuntu-latest

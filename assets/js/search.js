@@ -18,6 +18,12 @@ class SearchEngine {
         this.searchInput = document.getElementById('searchInput');
         if (!this.searchInput) return;
 
+        // 检查 Lunr.js 是否加载
+        if (typeof lunr === 'undefined') {
+            console.warn('Lunr.js 未加载，搜索功能不可用');
+            return;
+        }
+
         this.setupSearchUI();
         await this.loadSearchIndex();
         this.setupEventListeners();
@@ -38,6 +44,9 @@ class SearchEngine {
             // 生成搜索索引数据
             await this.generateSearchData();
             
+            // 保存文档引用，避免作用域问题
+            const documents = this.documents;
+            
             // 创建Lunr搜索索引
             this.searchIndex = lunr(function () {
                 this.ref('id');
@@ -47,10 +56,10 @@ class SearchEngine {
                 this.field('tags', { boost: 3 });
 
                 // 添加文档到索引
-                this.documents.forEach((doc) => {
+                documents.forEach((doc) => {
                     this.add(doc);
-                }, this);
-            }.bind(this));
+                });
+            });
 
         } catch (error) {
             console.error('搜索索引加载失败:', error);
