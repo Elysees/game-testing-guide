@@ -18,7 +18,8 @@ gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 # JRuby的http_parser.rb gem
 gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 
-# 开发依赖
-group :development do
+# 开发和测试依赖
+group :development, :test do
   gem "webrick", "~> 1.7"
+  gem "html-proofer", "~> 3.19"
 end
