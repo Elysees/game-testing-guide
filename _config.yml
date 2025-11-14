@@ -35,18 +35,25 @@ collections:
 
 # 默认配置
 defaults:
+  # 所有 Markdown 文件使用默认布局
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  
   # Python 指南的默认设置
   - scope:
-      path: "python-testing-guide"
+      path: "python"
     values:
-      layout: page
+      layout: "default"
       category: python
   
   # C# 指南的默认设置
   - scope:
-      path: "csharp-learning-guide"
+      path: "csharp"
     values:
-      layout: page
+      layout: "default"
       category: csharp
 
 # 排除文件和文件夹
