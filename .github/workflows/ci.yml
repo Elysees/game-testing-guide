@@ -29,8 +29,8 @@ jobs:
           --check-html \
           --allow-hash-href \
           --file-ignore "/assets/" \
-          --ignore-empty-alt \
-          --ignore-missing-alt
+          --empty-alt-ignore \
+          --missing-alt-ignore
           
   lighthouse:
     runs-on: ubuntu-latest
