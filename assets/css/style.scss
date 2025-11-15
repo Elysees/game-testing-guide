@@ -952,7 +952,7 @@ pre.line-numbers .line-numbers-rows,
 .content-body pre code {
   display: block;
   padding: 50px 24px 24px;
-  color: #c9d1d9;
+  color: #e6edf3;
   background: transparent;
   font-family: inherit;
   font-size: 0.95rem;
@@ -1196,6 +1196,206 @@ pre.line-numbers .line-numbers-rows,
   letter-spacing: 0.5px;
   opacity: 0.8;
   z-index: 5;
+}
+
+/* ===== 增强语法高亮对比度 - 确保所有代码元素清晰可见 ===== */
+
+/* 基础文本和标识符 */
+.content-body pre .token.plain,
+.content-body pre .token.text {
+  color: #e6edf3 !important;
+}
+
+/* 变量和标识符 */
+.content-body pre .token.parameter,
+.content-body pre .token.variable-name,
+.content-body pre .token.identifier {
+  color: #ffa657 !important;
+}
+
+/* 方法和函数名 */
+.content-body pre .token.method,
+.content-body pre .token.function-name,
+.content-body pre .token.method-name {
+  color: #d2a8ff !important;
+  font-weight: 600;
+}
+
+/* 类名和类型 */
+.content-body pre .token.class-name,
+.content-body pre .token.type,
+.content-body pre .token.type-name {
+  color: #ffa657 !important;
+  font-weight: 600;
+}
+
+/* 属性和字段 */
+.content-body pre .token.attr-name,
+.content-body pre .token.property-name,
+.content-body pre .token.field {
+  color: #79c0ff !important;
+}
+
+/* 字符串和字面量 */
+.content-body pre .token.string,
+.content-body pre .token.template-string,
+.content-body pre .token.char {
+  color: #a5d6ff !important;
+}
+
+/* 数字 */
+.content-body pre .token.number,
+.content-body pre .token.numeric {
+  color: #79c0ff !important;
+}
+
+/* 关键字 */
+.content-body pre .token.keyword,
+.content-body pre .token.control,
+.content-body pre .token.flow {
+  color: #ff7b72 !important;
+  font-weight: 600;
+}
+
+/* 操作符 */
+.content-body pre .token.operator,
+.content-body pre .token.assignment {
+  color: #ff7b72 !important;
+}
+
+/* 标点符号 */
+.content-body pre .token.punctuation,
+.content-body pre .token.delimiter {
+  color: #c9d1d9 !important;
+}
+
+/* 注释 */
+.content-body pre .token.comment,
+.content-body pre .token.block-comment,
+.content-body pre .token.line-comment {
+  color: #8b949e !important;
+  font-style: italic;
+}
+
+/* 特殊符号和标签 */
+.content-body pre .token.tag,
+.content-body pre .token.tag-name {
+  color: #7ee787 !important;
+  font-weight: 600;
+}
+
+/* 属性值 */
+.content-body pre .token.attr-value,
+.content-body pre .token.attribute-value {
+  color: #a5d6ff !important;
+}
+
+/* 正则表达式 */
+.content-body pre .token.regex {
+  color: #ffa657 !important;
+}
+
+/* 导入和包 */
+.content-body pre .token.import,
+.content-body pre .token.include,
+.content-body pre .token.package {
+  color: #ff7b72 !important;
+  font-weight: 600;
+}
+
+/* 装饰器 */
+.content-body pre .token.decorator,
+.content-body pre .token.annotation {
+  color: #ffa657 !important;
+  font-weight: 600;
+}
+
+/* 内置函数和类型 */
+.content-body pre .token.builtin,
+.content-body pre .token.builtin-name {
+  color: #79c0ff !important;
+  font-weight: 600;
+}
+
+/* 常量 */
+.content-body pre .token.constant,
+.content-body pre .token.boolean {
+  color: #79c0ff !important;
+  font-weight: 600;
+}
+
+/* 模块和命名空间 */
+.content-body pre .token.module,
+.content-body pre .token.namespace {
+  color: #7ee787 !important;
+  font-weight: 600;
+}
+
+/* 泛型 */
+.content-body pre .token.generic,
+.content-body pre .token.type-parameter {
+  color: #79c0ff !important;
+  font-weight: 600;
+}
+
+/* 特殊关键字 */
+.content-body pre .token.this,
+.content-body pre .token.self,
+.content-body pre .token.super {
+  color: #ff7b72 !important;
+  font-weight: 600;
+}
+
+/* 异常和错误 */
+.content-body pre .token.exception,
+.content-body pre .token.error {
+  color: #f85149 !important;
+  font-weight: 600;
+}
+
+/* 确保所有未定义的token都有基础颜色 */
+.content-body pre code * {
+  color: #e6edf3;
+}
+
+/* 针对特定语言的额外优化 */
+
+/* Python 特定 */
+.content-body pre .token.triple-quoted-string {
+  color: #a5d6ff !important;
+  font-style: italic;
+}
+
+/* JavaScript/TypeScript 特定 */
+.content-body pre .token.template-punctuation {
+  color: #ff7b72 !important;
+}
+
+.content-body pre .token.interpolation {
+  color: #ffa657 !important;
+}
+
+/* C# 特定 */
+.content-body pre .token.preprocessor {
+  color: #8b949e !important;
+}
+
+.content-body pre .token.linq {
+  color: #ff7b72 !important;
+  font-weight: 600;
+}
+
+/* SQL 特定 */
+.content-body pre .token.sql-keyword {
+  color: #ff7b72 !important;
+  font-weight: 600;
+}
+
+/* 确保选中文本的对比度 */
+.content-body pre code::selection,
+.content-body pre code *::selection {
+  background: rgba(56, 139, 253, 0.4) !important;
+  color: #ffffff !important;
 }
 
 /* 特殊代码块类型 */
