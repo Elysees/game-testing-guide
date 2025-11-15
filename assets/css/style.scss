@@ -1447,32 +1447,59 @@ pre.line-numbers .line-numbers-rows,
   color: white;
 }
 
-/* ===== 表格样式 ===== */
-.content-body table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 20px 0;
-  background: var(--bg-primary);
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  box-shadow: var(--box-shadow);
+/* ===== 表格样式 - 强制修复布局 ===== */
+.content-body table,
+table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  margin: 20px 0 !important;
+  background: var(--bg-primary) !important;
+  border-radius: var(--border-radius) !important;
+  overflow: hidden !important;
+  box-shadow: var(--box-shadow) !important;
+  display: table !important;
+  table-layout: auto !important;
 }
 
 .content-body th,
-.content-body td {
-  padding: 12px 15px;
-  text-align: left;
-  border-bottom: 1px solid var(--border-color);
+.content-body td,
+th, td {
+  padding: 12px 15px !important;
+  text-align: left !important;
+  border: 1px solid var(--border-color) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  vertical-align: top !important;
+  word-wrap: break-word !important;
+  max-width: 200px !important;
+  display: table-cell !important;
 }
 
-.content-body th {
-  background: var(--bg-secondary);
-  font-weight: 600;
-  color: var(--text-primary);
+.content-body th,
+th {
+  background: var(--bg-secondary) !important;
+  font-weight: 600 !important;
+  color: var(--text-primary) !important;
+  white-space: nowrap !important;
 }
 
-.content-body tr:hover {
-  background: var(--bg-secondary);
+.content-body tr,
+tr {
+  display: table-row !important;
+}
+
+.content-body tr:hover,
+tr:hover {
+  background: var(--bg-secondary) !important;
+}
+
+.content-body tbody,
+tbody {
+  display: table-row-group !important;
+}
+
+.content-body thead,
+thead {
+  display: table-header-group !important;
 }
 
 /* ===== 章节导航 ===== */
