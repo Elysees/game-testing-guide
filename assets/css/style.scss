@@ -634,20 +634,54 @@ body {
   flex: 1;
   margin-left: var(--sidebar-width);
   padding: 30px 40px;
-  max-width: none;
+  max-width: none !important;
   min-width: 0;
-  width: calc(100% - var(--sidebar-width));
+  width: calc(100% - var(--sidebar-width)) !important;
 }
 
-/* 确保内容区域充分利用空间 */
+/* 强制确保内容区域充分利用空间 */
 .content-area .article-content {
-  width: 100%;
-  max-width: none;
+  width: 100% !important;
+  max-width: none !important;
 }
 
 .content-area .content-body {
-  width: 100%;
-  max-width: none;
+  width: 100% !important;
+  max-width: none !important;
+}
+
+/* 强制移除任何可能限制宽度的样式 */
+.main-content,
+.guide-layout,
+.article-content,
+.content-body {
+  max-width: none !important;
+  width: 100% !important;
+}
+
+/* 彻底移除Prism.js或其他插件可能添加的行号列 */
+.line-numbers-rows,
+.line-numbers .line-numbers-rows,
+pre.line-numbers .line-numbers-rows,
+.content-body pre.line-numbers .line-numbers-rows,
+.highlight .line-numbers-rows {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  position: absolute !important;
+  left: -9999px !important;
+}
+
+/* 强制代码块使用全宽 */
+.content-body pre,
+.content-body pre code,
+.highlight pre,
+.highlight pre code {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
 }
 
 /* ===== 面包屑导航 ===== */
@@ -1039,25 +1073,35 @@ body {
   font-weight: 600;
 }
 
-/* 行号样式 - 优化显示 */
+/* 彻底移除行号独立列显示 */
+.content-body pre.line-numbers .line-numbers-rows {
+  display: none !important;
+}
+
 .content-body pre.line-numbers {
-  padding-left: 0;
+  padding-left: 0 !important;
   counter-reset: linenumber;
 }
 
 .content-body pre.line-numbers code {
-  padding-left: 24px;
+  padding-left: 24px !important;
   counter-reset: linenumber;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
 }
 
-.content-body pre.line-numbers code .line {
+/* 内联行号样式 - 每行前面显示行号 */
+.content-body pre.line-numbers code .token-line,
+.content-body pre.line-numbers code > span {
   display: block;
   position: relative;
-  padding-left: 60px;
   counter-increment: linenumber;
+  padding-left: 60px;
 }
 
-.content-body pre.line-numbers code .line:before {
+.content-body pre.line-numbers code .token-line:before,
+.content-body pre.line-numbers code > span:before {
   content: counter(linenumber);
   position: absolute;
   left: 0;
@@ -1068,18 +1112,27 @@ body {
   text-align: right;
   padding-right: 16px;
   user-select: none;
+  background: rgba(0, 0, 0, 0.1);
   border-right: 1px solid #3c3c54;
-  background: rgba(0, 0, 0, 0.2);
   margin-left: -24px;
-  padding-top: inherit;
-  padding-bottom: inherit;
+  line-height: inherit;
 }
 
-/* 简化行号显示 - 移除独立列 */
+/* 强制覆盖任何可能的行号列样式 */
+.content-body pre .line-numbers-rows,
+.content-body .line-numbers-rows {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  opacity: 0 !important;
+}
+
+/* 确保代码内容充分利用空间 */
 .content-body pre code {
   position: relative;
-  width: 100%;
-  max-width: 100%;
+  width: 100% !important;
+  max-width: 100% !important;
+  display: block;
 }
 
 /* 复制按钮现代化样式 */
