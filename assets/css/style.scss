@@ -909,19 +909,19 @@ pre.line-numbers .line-numbers-rows,
   font-style: italic;
 }
 
-/* ===== 现代化代码块样式 - GitHub Dark 主题 ===== */
+/* ===== 现代化代码块样式 - 清爽明亮主题 ===== */
 .content-body pre {
   position: relative;
-  background: #0d1117;
-  border: 1px solid #30363d;
-  border-radius: 8px;
+  background: #ffffff;
+  border: 2px solid #e1e8ed;
+  border-radius: 12px;
   overflow-x: auto;
   overflow-y: hidden;
   margin: 24px 0;
   font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', var(--font-mono);
   font-size: 0.9rem;
   line-height: 1.6;
-  box-shadow: 0 8px 24px rgba(1, 4, 9, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   width: 100%;
   max-width: 100%;
 }
@@ -933,8 +933,9 @@ pre.line-numbers .line-numbers-rows,
   left: 0;
   right: 0;
   height: 40px;
-  background: #161b22;
-  border-bottom: 1px solid #30363d;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-bottom: 2px solid #e1e8ed;
+  border-radius: 10px 10px 0 0;
 }
 
 .content-body pre::after {
@@ -952,7 +953,7 @@ pre.line-numbers .line-numbers-rows,
 .content-body pre code {
   display: block;
   padding: 50px 24px 24px;
-  color: #e6edf3;
+  color: #2d3748;
   background: transparent;
   font-family: inherit;
   font-size: 0.95rem;
@@ -981,17 +982,17 @@ pre.line-numbers .line-numbers-rows,
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-/* 语法高亮 - GitHub Dark 主题 */
+/* 语法高亮 - 明亮清爽主题 */
 .content-body pre .token.comment,
 .content-body pre .token.prolog,
 .content-body pre .token.doctype,
 .content-body pre .token.cdata {
-  color: #8b949e;
+  color: #6a737d;
   font-style: italic;
 }
 
 .content-body pre .token.punctuation {
-  color: #c9d1d9;
+  color: #586069;
 }
 
 .content-body pre .token.property,
@@ -1001,7 +1002,7 @@ pre.line-numbers .line-numbers-rows,
 .content-body pre .token.constant,
 .content-body pre .token.symbol,
 .content-body pre .token.deleted {
-  color: #79c0ff;
+  color: #005cc5;
 }
 
 .content-body pre .token.selector,
@@ -1010,32 +1011,32 @@ pre.line-numbers .line-numbers-rows,
 .content-body pre .token.char,
 .content-body pre .token.builtin,
 .content-body pre .token.inserted {
-  color: #a5d6ff;
+  color: #032f62;
 }
 
 .content-body pre .token.operator,
 .content-body pre .token.entity,
 .content-body pre .token.url,
 .content-body pre .token.variable {
-  color: #ff7b72;
+  color: #d73a49;
 }
 
 .content-body pre .token.atrule,
 .content-body pre .token.attr-value,
 .content-body pre .token.function,
 .content-body pre .token.class-name {
-  color: #d2a8ff;
+  color: #6f42c1;
   font-weight: 600;
 }
 
 .content-body pre .token.keyword {
-  color: #ff7b72;
+  color: #d73a49;
   font-weight: 600;
 }
 
 .content-body pre .token.regex,
 .content-body pre .token.important {
-  color: #ffa657;
+  color: #e36209;
 }
 
 .content-body pre .token.important,
@@ -1053,23 +1054,23 @@ pre.line-numbers .line-numbers-rows,
 
 /* Python 特定语法高亮 */
 .content-body pre .token.decorator {
-  color: #ffa657;
+  color: #e36209;
   font-weight: 600;
 }
 
 .content-body pre .token.builtin-name {
-  color: #79c0ff;
+  color: #005cc5;
   font-weight: 600;
 }
 
 /* C# 特定语法高亮 */
 .content-body pre .token.namespace {
-  color: #7ee787;
+  color: #22863a;
   font-weight: 600;
 }
 
 .content-body pre .token.generic {
-  color: #79c0ff;
+  color: #005cc5;
   font-weight: 600;
 }
 
@@ -1135,14 +1136,14 @@ pre.line-numbers .line-numbers-rows,
   display: block;
 }
 
-/* 复制按钮现代化样式 */
+/* 复制按钮现代化样式 - 明亮主题 */
 .copy-code-btn {
   position: absolute;
   top: 12px;
   right: 16px;
-  background: rgba(0, 0, 0, 0.6);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.9);
+  color: #586069;
+  border: 1px solid rgba(0, 0, 0, 0.15);
   padding: 6px 10px;
   border-radius: 6px;
   cursor: pointer;
@@ -1155,6 +1156,7 @@ pre.line-numbers .line-numbers-rows,
   align-items: center;
   gap: 4px;
   z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .content-body pre:hover .copy-code-btn {
@@ -1162,11 +1164,12 @@ pre.line-numbers .line-numbers-rows,
 }
 
 .copy-code-btn:hover {
-  background: rgba(0, 0, 0, 0.8);
-  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 1);
+  border-color: rgba(0, 0, 0, 0.25);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   opacity: 1;
+  color: #2d3748;
 }
 
 .copy-code-btn:active {
@@ -1174,8 +1177,8 @@ pre.line-numbers .line-numbers-rows,
 }
 
 .copy-code-btn.copied {
-  background: rgba(39, 202, 63, 0.8);
-  border-color: rgba(39, 202, 63, 0.6);
+  background: rgba(40, 167, 69, 0.9);
+  border-color: rgba(40, 167, 69, 0.6);
   color: #ffffff;
   opacity: 1;
 }
@@ -1198,26 +1201,26 @@ pre.line-numbers .line-numbers-rows,
   z-index: 5;
 }
 
-/* ===== 增强语法高亮对比度 - 确保所有代码元素清晰可见 ===== */
+/* ===== 增强语法高亮对比度 - 明亮主题优化 ===== */
 
 /* 基础文本和标识符 */
 .content-body pre .token.plain,
 .content-body pre .token.text {
-  color: #e6edf3 !important;
+  color: #2d3748 !important;
 }
 
 /* 变量和标识符 */
 .content-body pre .token.parameter,
 .content-body pre .token.variable-name,
 .content-body pre .token.identifier {
-  color: #ffa657 !important;
+  color: #e36209 !important;
 }
 
 /* 方法和函数名 */
 .content-body pre .token.method,
 .content-body pre .token.function-name,
 .content-body pre .token.method-name {
-  color: #d2a8ff !important;
+  color: #6f42c1 !important;
   font-weight: 600;
 }
 
@@ -1225,7 +1228,7 @@ pre.line-numbers .line-numbers-rows,
 .content-body pre .token.class-name,
 .content-body pre .token.type,
 .content-body pre .token.type-name {
-  color: #ffa657 !important;
+  color: #e36209 !important;
   font-weight: 600;
 }
 
@@ -1233,108 +1236,108 @@ pre.line-numbers .line-numbers-rows,
 .content-body pre .token.attr-name,
 .content-body pre .token.property-name,
 .content-body pre .token.field {
-  color: #79c0ff !important;
+  color: #005cc5 !important;
 }
 
 /* 字符串和字面量 */
 .content-body pre .token.string,
 .content-body pre .token.template-string,
 .content-body pre .token.char {
-  color: #a5d6ff !important;
+  color: #032f62 !important;
 }
 
 /* 数字 */
 .content-body pre .token.number,
 .content-body pre .token.numeric {
-  color: #79c0ff !important;
+  color: #005cc5 !important;
 }
 
 /* 关键字 */
 .content-body pre .token.keyword,
 .content-body pre .token.control,
 .content-body pre .token.flow {
-  color: #ff7b72 !important;
+  color: #d73a49 !important;
   font-weight: 600;
 }
 
 /* 操作符 */
 .content-body pre .token.operator,
 .content-body pre .token.assignment {
-  color: #ff7b72 !important;
+  color: #d73a49 !important;
 }
 
 /* 标点符号 */
 .content-body pre .token.punctuation,
 .content-body pre .token.delimiter {
-  color: #c9d1d9 !important;
+  color: #586069 !important;
 }
 
 /* 注释 */
 .content-body pre .token.comment,
 .content-body pre .token.block-comment,
 .content-body pre .token.line-comment {
-  color: #8b949e !important;
+  color: #6a737d !important;
   font-style: italic;
 }
 
 /* 特殊符号和标签 */
 .content-body pre .token.tag,
 .content-body pre .token.tag-name {
-  color: #7ee787 !important;
+  color: #22863a !important;
   font-weight: 600;
 }
 
 /* 属性值 */
 .content-body pre .token.attr-value,
 .content-body pre .token.attribute-value {
-  color: #a5d6ff !important;
+  color: #032f62 !important;
 }
 
 /* 正则表达式 */
 .content-body pre .token.regex {
-  color: #ffa657 !important;
+  color: #e36209 !important;
 }
 
 /* 导入和包 */
 .content-body pre .token.import,
 .content-body pre .token.include,
 .content-body pre .token.package {
-  color: #ff7b72 !important;
+  color: #d73a49 !important;
   font-weight: 600;
 }
 
 /* 装饰器 */
 .content-body pre .token.decorator,
 .content-body pre .token.annotation {
-  color: #ffa657 !important;
+  color: #e36209 !important;
   font-weight: 600;
 }
 
 /* 内置函数和类型 */
 .content-body pre .token.builtin,
 .content-body pre .token.builtin-name {
-  color: #79c0ff !important;
+  color: #005cc5 !important;
   font-weight: 600;
 }
 
 /* 常量 */
 .content-body pre .token.constant,
 .content-body pre .token.boolean {
-  color: #79c0ff !important;
+  color: #005cc5 !important;
   font-weight: 600;
 }
 
 /* 模块和命名空间 */
 .content-body pre .token.module,
 .content-body pre .token.namespace {
-  color: #7ee787 !important;
+  color: #22863a !important;
   font-weight: 600;
 }
 
 /* 泛型 */
 .content-body pre .token.generic,
 .content-body pre .token.type-parameter {
-  color: #79c0ff !important;
+  color: #005cc5 !important;
   font-weight: 600;
 }
 
@@ -1342,60 +1345,60 @@ pre.line-numbers .line-numbers-rows,
 .content-body pre .token.this,
 .content-body pre .token.self,
 .content-body pre .token.super {
-  color: #ff7b72 !important;
+  color: #d73a49 !important;
   font-weight: 600;
 }
 
 /* 异常和错误 */
 .content-body pre .token.exception,
 .content-body pre .token.error {
-  color: #f85149 !important;
+  color: #cb2431 !important;
   font-weight: 600;
 }
 
 /* 确保所有未定义的token都有基础颜色 */
 .content-body pre code * {
-  color: #e6edf3;
+  color: #2d3748;
 }
 
 /* 针对特定语言的额外优化 */
 
 /* Python 特定 */
 .content-body pre .token.triple-quoted-string {
-  color: #a5d6ff !important;
+  color: #032f62 !important;
   font-style: italic;
 }
 
 /* JavaScript/TypeScript 特定 */
 .content-body pre .token.template-punctuation {
-  color: #ff7b72 !important;
+  color: #d73a49 !important;
 }
 
 .content-body pre .token.interpolation {
-  color: #ffa657 !important;
+  color: #e36209 !important;
 }
 
 /* C# 特定 */
 .content-body pre .token.preprocessor {
-  color: #8b949e !important;
+  color: #6a737d !important;
 }
 
 .content-body pre .token.linq {
-  color: #ff7b72 !important;
+  color: #d73a49 !important;
   font-weight: 600;
 }
 
 /* SQL 特定 */
 .content-body pre .token.sql-keyword {
-  color: #ff7b72 !important;
+  color: #d73a49 !important;
   font-weight: 600;
 }
 
 /* 确保选中文本的对比度 */
 .content-body pre code::selection,
 .content-body pre code *::selection {
-  background: rgba(56, 139, 253, 0.4) !important;
-  color: #ffffff !important;
+  background: rgba(0, 92, 197, 0.2) !important;
+  color: #2d3748 !important;
 }
 
 /* 特殊代码块类型 */
