@@ -33,11 +33,7 @@ kramdown:
   syntax_highlighter_opts:
     css_class: 'highlight'
     default_lang: python
-    span:
-      line_numbers: false
-    block:
-      line_numbers: true
-      start_line: 1
+    line_numbers: false
 
 # 性能优化
 sass:
